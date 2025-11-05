@@ -20,6 +20,23 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Environment variables
+
+This project reads the following environment variables at runtime. For local development, copy `.env.example` to `.env` (or set these in your environment) and fill in the values.
+
+Required variables defined in `.env.example`:
+
+- `AZURE_OPENAI_ENDPOINT` – The full endpoint URL for your Azure OpenAI resource (for example: `https://my-openai-resource.openai.azure.com`).
+- `AZURE_RESOURCE_NAME` – The short name of your Azure resource. Used in some helper utilities and telemetry.
+- `AZURE_API_KEY` – API key (secret) for the Azure OpenAI resource. Keep this private and do not commit it to source control.
+- `NODE_EXTRA_CA_CERTS` – (Optional) Path to additional CA certificate bundle used by Node.js when making TLS requests. If you don't need custom CAs, leave this blank or unset.
+
+Notes:
+
+- Never commit real secrets to the repository. Use a `.env` file on your local machine or a secrets manager in production.
+- On Vercel, Heroku, or other hosting platforms, set these variables in the project dashboard / environment settings instead of committing a `.env` file.
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
